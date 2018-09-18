@@ -1,0 +1,19 @@
+html
+    head
+    title X versus Y
+    // for some reason I can't get the pathing right locally, later lets fix this
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js")
+    script.
+        $(document.ready(function(){
+            var socket = io();
+            socket.on('timer', function(data){
+            $('counter').html(data.x);
+            });
+        }))
+        
+body
+    h1 Testing Pug
+    br
+    button Test
+    br 
+    p#counter 
