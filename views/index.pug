@@ -7,10 +7,15 @@ html
         var socket = io();
         socket.on('timer', function(data){
             document.getElementById('counter').innerHTML = data.x;
+        });
+        socket.on('imageSwapper', function(data){
+            document.getElementById('img1').src = data.pic1;
+            document.getElementById('img2').src = data.pic2;            
         });        
 body
-    h1 Testing Pug
+    h1 X Versus Y
     br
-    button Test
     br 
+    img#img1(src="", alt="Picture One", width="100", height="100")
+    img#img2(src="", alt="Picture Two", width="100", height="100" )
     p#counter 
